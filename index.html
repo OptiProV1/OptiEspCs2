@@ -20,55 +20,85 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
   }
 
   .container {
-    background: rgba(0, 0, 0, 0.75);
-    padding: 40px 60px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    max-width: 450px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 45px 70px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 191, 165, 0.6);
+    max-width: 480px;
     text-align: center;
-    animation: fadeIn 1s ease forwards;
+    animation: fadeInUp 1s ease forwards;
+    position: relative;
+    overflow: hidden;
   }
 
   h1 {
     font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 2.5rem;
-    letter-spacing: 1.2px;
-    color: #00bfa5;
-    text-shadow: 0 0 10px #00bfa5;
+    margin-bottom: 18px;
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+    color: #00d1b2;
+    text-shadow: 0 0 15px #00d1b2;
+    user-select: none;
+  }
+
+  h1 span {
+    display: inline-block;
+    background: linear-gradient(45deg, #00e6c1, #008e75);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
   }
 
   p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: #ccc;
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    color: #b0b0b0;
+    line-height: 1.5;
   }
 
   a.download-btn {
-    background: #00bfa5;
-    color: #111;
+    background: #00d1b2;
+    color: #0a0a0a;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.3rem;
-    padding: 18px 45px;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0, 191, 165, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.35rem;
+    padding: 20px 55px;
+    border-radius: 60px;
+    box-shadow: 0 8px 25px rgba(0, 209, 178, 0.7);
+    transition: all 0.35s ease;
     display: inline-block;
+    user-select: none;
+    letter-spacing: 0.05em;
   }
 
-  a.download-btn:hover {
-    background: #008e75;
-    box-shadow: 0 8px 25px rgba(0, 142, 117, 0.8);
+  a.download-btn:hover, a.download-btn:focus {
+    background: #009e75;
+    box-shadow: 0 10px 40px rgba(0, 158, 117, 0.9);
+    transform: translateY(-3px);
+    outline: none;
   }
 
-  /* Animate fadeIn */
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(15px);}
+  /* Animate fadeInUp */
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(25px);}
     to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Gradient text animation */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Responsive */
@@ -76,22 +106,27 @@
     .container {
       padding: 30px 25px;
       max-width: 90vw;
+      box-shadow: 0 6px 20px rgba(0, 191, 165, 0.5);
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
+      margin-bottom: 14px;
     }
     a.download-btn {
-      padding: 15px 30px;
-      font-size: 1.1rem;
+      padding: 16px 35px;
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <h1>تحميل تطبيق <br> <span style="color:#00e6c1;">OptiEspCs2</span></h1>
+  <div class="container" role="main">
+    <h1>تحميل تطبيق <br> <span>OptiEspCs2</span></h1>
     <p>احصل على أفضل تجربة ESP للعبة CS:GO 2 بسهولة وأمان.</p>
-    <a href="OptiEsp-v2.rar" class="download-btn" download>تحميل التطبيق الآن</a>
+    <a href="OptiEsp-v2.rar" class="download-btn" download aria-label="تحميل تطبيق OptiEspCs2 الآن">تحميل التطبيق الآن</a>
   </div>
 </body>
 </html>
